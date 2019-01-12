@@ -1,0 +1,23 @@
+  // Chessboard.
+  
+  const range = (start, end) => Array.from({ length: (end - start + 1) }, (_, k) => k + start)
+  
+  const chessboard = (size) => {
+    const totalSquares = size * size
+    const squareNumbers = range(1, totalSquares)
+    const squareTransformer = (n) => n % 2 == 0 ? "#" : " "
+    const lineTransformer = (line) => line.map(squareTransformer).join("")
+    const createBoard = (from, to, board) => {
+      board.push(squareNumbers.slice(from, to))
+      if (to == totalSquares) {
+        return board
+      } else {
+        return createBoard(from + size, to + size, board)
+      }
+    }
+    return createBoard(0, size, []).map(lineTransformer)
+  }
+  
+  const printer = (board) => board.forEach(line => console.log(line))
+  
+  printer(chessboard(15))

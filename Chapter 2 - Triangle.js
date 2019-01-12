@@ -22,7 +22,7 @@ Array.prototype.last = function () {
  */
 const triangle = function (char = "#", depth) {
   if (depth === undefined) throw new Error("Depth must be defined.")
-  // Recursively builds an array of strings represeting the triangle.
+  // (Tail) recursively builds an array of strings represeting the triangle.
   const buildTriangle = (rows = []) => {
     if (rows.length === depth) {
       return rows
@@ -36,4 +36,4 @@ const triangle = function (char = "#", depth) {
 }
 
 // Create and print a triangle.
-const tri = triangle("#", 5).forEach(row => console.log(row))
+triangle("#", 5).forEach(row => console.log(row))
