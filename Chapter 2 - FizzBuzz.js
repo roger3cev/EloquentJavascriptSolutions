@@ -19,7 +19,7 @@ Array.range = function (start, end) {
  * Maps the natural numbers from 1 to a specified number > ONE to the "FizzBuzz numbers".
  * 
  * @param {Number} to the number to calculate up to
- * @returns {Array<Any>} array containing the "FizzBuzz numbers"
+ * @returns {Array<String>} array containing the "FizzBuzz numbers"
  */
 const fizzBuzz = (to) => {
   if (to === undefined) throw new Error(`"to" must be defined`)
